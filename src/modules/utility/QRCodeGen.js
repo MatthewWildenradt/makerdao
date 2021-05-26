@@ -8,19 +8,25 @@ import QRCode from 'easyqrcodejs';
 import { console } from 'window-or-global';
 
 const QRCodeGen = ({ pad, children }) => {
-  var used = 0;
   function printer() {
-    if (used) return;
     var text1 = document.getElementById('QRid').value;
     var options = {
       text: text1,
       width: 500,
       height: 500,
-      //backgroundImage: '.../public/images/icons/QRGB.jpeg'
+      backgroundImage: '/images/QRBG.jpeg',
+      backgroundImageAlpha: 1,
+      quietZone: 160,
     };
     // Create QRCode Object
-    new QRCode(document.getElementById('qrcode'), options);
-    used = 1;
+    //var canvas = document.getElementById("qrcode");
+    //const context = canvas.getContext('2d');
+    //context.clearRect(0, 0, canvas.width, canvas.height);
+    var qrDiv = document.getElementById('mainDiv');
+    while (qrDiv.firstChild) {
+      qrDiv.removeChild(qrDiv.firstChild);
+    }
+    new QRCode(qrDiv, options);
   }
 
   return (
@@ -36,8 +42,8 @@ const QRCodeGen = ({ pad, children }) => {
       </Aligner>
 
       <Aligner center>
-        <div className="qr" id="qrcode">
-          <canvas width="0" height="58"></canvas>
+        <div className="qr" id="mainDiv">
+          <canvas id="qrcode" width="0" height="58"></canvas>
         </div>
       </Aligner>
     </Box>
