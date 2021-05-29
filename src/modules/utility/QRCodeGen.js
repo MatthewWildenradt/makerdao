@@ -14,7 +14,7 @@ const QRCodeGen = ({ pad, children }) => {
       text: text1,
       width: 500,
       height: 500,
-      backgroundImage: '/images/QRBG.jpeg',
+      backgroundImage: '/images/QRBG1.jpeg',
       backgroundImageAlpha: 1,
       quietZone: 160,
     };
