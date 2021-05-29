@@ -12,11 +12,14 @@ const QRCodeGen = ({ pad, children }) => {
     var text1 = document.getElementById('QRid').value;
     var options = {
       text: text1,
-      width: 500,
-      height: 500,
-      backgroundImage: '/images/QRBG1.jpeg',
+      width: 450,
+      height: 450,
+      backgroundImage: '/images/QRBG1.png',
       backgroundImageAlpha: 1,
-      quietZone: 160,
+      logo: '/images/QRlogo.png',
+      logoBackgroundTransparent: true,
+      dotScale: 0.5,
+      quietZone: 250,
     };
     // Create QRCode Object
     //var canvas = document.getElementById("qrcode");
