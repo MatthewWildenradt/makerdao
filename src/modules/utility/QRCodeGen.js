@@ -39,7 +39,9 @@ const QRCodeGen = ({ pad, children }) => {
       </Aligner>
 
       <Aligner center>
-        <Button onClick={printer}>Generate Your QR Code</Button>
+        <Button onClick={printer} hideExternalIcon="true">
+          Generate Your QR Code
+        </Button>
       </Aligner>
 
       <Aligner center>
