@@ -12,19 +12,17 @@ const QRCodeGen = ({ pad, children }) => {
     var text1 = document.getElementById('QRid').value;
     var options = {
       text: text1,
-      width: 450,
-      height: 450,
-      backgroundImage: '/images/QRBG1.png',
+      width: 400,
+      height: 400,
+      backgroundImage: '/images/QRBG.png',
       backgroundImageAlpha: 1,
       logo: '/images/QRlogo.png',
       logoBackgroundTransparent: true,
-      dotScale: 0.5,
-      quietZone: 250,
+      dotScale: 0.7,
+      quietZone: 280,
+      correctLevel: QRCode.CorrectLevel.H,
     };
     // Create QRCode Object
-    //var canvas = document.getElementById("qrcode");
-    //const context = canvas.getContext('2d');
-    //context.clearRect(0, 0, canvas.width, canvas.height);
     var qrDiv = document.getElementById('mainDiv');
     while (qrDiv.firstChild) {
       qrDiv.removeChild(qrDiv.firstChild);
